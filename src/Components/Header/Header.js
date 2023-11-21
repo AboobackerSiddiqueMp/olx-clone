@@ -6,7 +6,11 @@ import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
+import { useContext } from 'react';
+import { AuthContext } from '../../store/Context';
+
 function Header() {
+  const {users}= useContext(AuthContext)
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -34,7 +38,7 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>Login</span>
+          <span>{users ? users.displayName:'login'}</span>
           <hr />
         </div>
 

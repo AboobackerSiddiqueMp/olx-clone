@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Logo from '../../olx-logo.png';
 import './Signup.css';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Firebase } from "../../firebase/config";
 import { Auth } from "../../firebase/config";
 import { getFirestore, collection, getDocs ,addDoc,updateDoc,deleteDoc,doc,setDoc} from 'firebase/firestore/lite'; 
@@ -23,6 +23,9 @@ export default function Signup() {
     const user = userCredential.user;
     console.log('User registered:', user)
     console.log('User :', user.uid);
+     updateProfile(user, {
+          displayName: userName,
+        })
 
     const db = getFirestore(Firebase);
     const prodtAdd = addDoc(collection(db, "users"), { 
