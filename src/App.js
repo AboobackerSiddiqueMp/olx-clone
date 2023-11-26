@@ -8,7 +8,7 @@ import { AuthContext } from "./store/Context";
 import { Firebase } from "./firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import { Auth } from "./firebase/config";
-
+import Create from "./Pages/Create"
 
 
 function App() {
@@ -39,6 +39,8 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/create" element={<Create></Create>}></Route>
+
       </Routes>
     </div>
   );

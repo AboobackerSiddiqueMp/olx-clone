@@ -114,7 +114,9 @@ export default function Signup() {
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <a ><span onClick={()=>{
+          navigate('/login')
+        }}>Login</span></a>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ export const AuthContext= createContext(null);
 
 
 export default function Context({children}){
-    const [users,setuser]=useState('hiii')
+    const [users,setuser]=useState(null)
 
 
     return(

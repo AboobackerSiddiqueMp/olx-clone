@@ -63,7 +63,9 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <a ><span onClick={()=>{
+          navigate('/signup')
+        }}>Signup</span></a>
       </div>
     </div>
   );
