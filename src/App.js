@@ -9,6 +9,8 @@ import { Firebase } from "./firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import { Auth } from "./firebase/config";
 import Create from "./Pages/Create"
+import ViewPosts from "./Pages/ViewPost"
+import Post from "./store/PostContext";
 
 
 function App() {
@@ -35,13 +37,19 @@ function App() {
 
   return (
     <div>
+      <Post>
       <Routes>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/create" element={<Create></Create>}></Route>
+        <Route path="/viewpost" element={<ViewPosts></ViewPosts>}></Route>
+
+
+
 
       </Routes>
+      </Post>
     </div>
   );
 }
