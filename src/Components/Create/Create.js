@@ -19,6 +19,8 @@ const Create = () => {
   const date= new Date()
   const handleSubmit=async(e)=>{
     e.preventDefault()
+    console.log()
+
 
     try {
       if (image) {
@@ -36,8 +38,10 @@ const Create = () => {
 
         // Now you can use the downloadURL as needed (e.g., save it to the database)
         console.log('Image uploaded. Download URL:', downloadURL);
+
         const db = getFirestore(Firebase);
-        const prodtAdd = addDoc(collection(db, "Products"), { 
+        console.log('===========',users.uid)
+        const prodtAdd = await addDoc(collection(db, "Products"), { 
                   id:users.uid,
                   name,
                   price,
@@ -47,6 +51,7 @@ const Create = () => {
 
 
                 }).then(()=>{
+
                   navigate('/')
                   
                 })

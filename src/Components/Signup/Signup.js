@@ -23,6 +23,9 @@ export default function Signup() {
     const user = userCredential.user;
     console.log('User registered:', user)
     console.log('User :', user.uid);
+    navigate('/login')
+
+
      updateProfile(user, {
           displayName: userName,
         })

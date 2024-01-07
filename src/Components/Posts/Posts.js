@@ -16,6 +16,7 @@ function Posts() {
   const[freshPost,setFreshpost]=useState([])
   useEffect(() => {
     const fetchData = async () => {
+      
       const db = getFirestore(Firebase);
       const collectionRef = collection(db, 'Products');
 
